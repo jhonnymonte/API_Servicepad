@@ -6,7 +6,9 @@ from config.swagger import swagger_config, template
 
 app = Flask(__name__) 
 
+UPLOAD_FOLDER = 'static/users/'
 SECRET_KEY = 'JUaZYfFml7'
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['SECRET_KEY'] = SECRET_KEY
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://postgres:admin@localhost/blog_api_db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False

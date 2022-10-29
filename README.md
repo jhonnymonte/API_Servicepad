@@ -24,15 +24,16 @@ update for your user, password and name from you databae
 ------
 then you have to init a python terminal to make the migrations and insert the next comamnds
     $ python
-    >>> from api.auth.models import Users
 
-    >>> from api.publications.models import Publication
+>>> from api.auth.models import Users
 
-    >>> from config.settings import db
+>>> from api.publications.models import Publication
 
-    >>> db.create_all()
+>>> from config.settings import db
+
+>>> db.create_all()
     
-    >>> exit()
+>>> exit()
 
 
 -----
