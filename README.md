@@ -4,7 +4,7 @@ Create the python environment and install the necessary dependencies
     $ pipenv install
 > this install all dependencies in a python container
 
-#test the API
+##test the API
 ------
 Please install postgresql on your computer 
 ------
@@ -17,15 +17,13 @@ create your database for example:
 
 or create a DB with a pgadmin o your favorite dbrowser
 
-In the configuration file for 'SQLALCHEMY_DATABASE_URI'(api-servicepad/config/settings.py).
-update for your user, password and name from you databae
+update database_uri in app.config 
 ------
 > app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://***youruser:yourpassword***@localhost/***yourdbname***'
 ------
 then you have to init a python terminal to make the migrations and insert the next comamnds
     $ python
-
->>> from api.auth.models import Users
+    >>> from api.auth.models import Users
 
 >>> from api.publications.models import Publication
 
@@ -33,7 +31,7 @@ then you have to init a python terminal to make the migrations and insert the ne
 
 >>> db.create_all()
     
->>> exit()
+    >>> exit()
 
 
 -----
