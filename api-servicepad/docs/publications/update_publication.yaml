@@ -1,0 +1,42 @@
+Update publication from user 
+---
+tags:
+  - Publications
+parameters:
+  - in: header
+    name: X-Access-Token
+    required: true
+  - in: path
+    name: id
+    type: integer  
+    required: true
+  - name: body
+    description: The body should contain the user Registration data
+    in: body
+    required: true
+    schema:
+      type: object
+      required:
+        - "title"
+        - "description"
+        - "priority"
+        - "status"
+      properties:
+        title:
+          type: "string"
+          example: "What is Lorem Ipsum?"
+        description:
+          type: "text"
+          example: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout"
+        priority:
+          type: "string"
+          example: "High"
+        status:
+          type: "boolean"
+          example: True
+responses:
+  201:
+    description: Update publication successfully
+
+  400:
+    description: Fails to create due to bad request data

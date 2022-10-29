@@ -1,0 +1,38 @@
+Create new publication from user 
+---
+tags:
+  - Publications
+parameters:
+  - in: header
+    name: X-Access-Token
+    required: true
+  - name: body
+    description: The body should contain the user Registration data
+    in: body
+    required: true
+    schema:
+      type: object
+      required:
+        - "title"
+        - "description"
+        - "priority"
+        - "status"
+      properties:
+        title:
+          type: "string"
+          example: "What is Lorem Ipsum?"
+        description:
+          type: "text"
+          example: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC"
+        priority:
+          type: "string"
+          example: "High"
+        status:
+          type: "boolean"
+          example: True
+responses:
+  201:
+    description: Create a new publication succesfully
+
+  400:
+    description: Fails to create new publication
