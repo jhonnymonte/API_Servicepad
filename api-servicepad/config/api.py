@@ -86,7 +86,7 @@ def login_user():
     return make_response('could not verify', 401,{'failed Authentication': 'info: "login required"'})
 
 
-@app.route('/api/auth', methods=['POST'])
+@app.route('/api/auth', methods=['PUT'])
 @swag_from('../docs/auth/users/update.yaml')
 @token_required
 def update_user(current_user):
