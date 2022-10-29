@@ -11,8 +11,9 @@ def freq(text):
 
         print('Frequency of', str2[i], 'is :', text.count(str2[i]))
 
+if __name__ == '__main__':
 
-text = "Hi how are things? How are you? Are you a developer? I am also a developer"
-
+    text = "Hi how are things? How are you? Are you a developer? I am also a developer"
+    freq(text)
 
 
