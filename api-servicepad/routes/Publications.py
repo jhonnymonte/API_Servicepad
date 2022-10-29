@@ -1,6 +1,6 @@
 from config.settings import app, db
 from flasgger import swag_from
-from api.publications.models import Publication
+from models.publications.models import Publication
 from flask import request, jsonify
 import datetime
 

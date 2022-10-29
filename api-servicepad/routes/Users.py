@@ -1,4 +1,4 @@
-from api.auth.models import Users
+from models.auth.models import Users
 from config.settings import app, db
 from flasgger import swag_from
 from flask import request, jsonify, make_response

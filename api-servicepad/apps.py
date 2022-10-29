@@ -1,4 +1,4 @@
-from api.auth.models import *
+from models.auth.models import *
 from config.settings import app
 from routes.Publications import *
 from routes.Users import *
