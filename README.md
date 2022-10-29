@@ -37,3 +37,70 @@ then you have to init a python terminal to make the migrations and insert the ne
     * Running on http://127.0.0.1:5000/
 ----
 
+## API reference
+
+## User managment
+
+```https
+  POST /api/auth/register
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `fullname` | `string` | **Required*. Username |
+| `email` | `string` | **Required*. Email |
+| `password` | `string` | **Required*. Password |
+
+
+```https
+  POST /api/auth/login
+  ```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `email` | `string` | **Required*. Email |
+| `password` | `string` | **Required*. Password |
+
+
+```https
+  PUT /api/auth
+```
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `username` | `string` | **Required*. Username |
+| `email` | `string` | **Required*. Email-id |
+| `password` | `string` | **Required*. Password |
+| `image` | `string($binary)` | **Required*. Image |
+
+
+## Publications
+
+```http
+  POST api/publications
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `title`      | `string` | **Required* Title  |
+| `description`      | `string` | **Required* Description |
+| `priority`      | `number` | **Required* Priority  |
+| `status`      | `string` | **Required* Current status |
+
+```http
+  PUT api/publications/{id}
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `title`      | `string` | **Required* Title |
+| `description`      | `string` | **Required* Description |
+| `priority`      | `number` | **Required* Priority |
+| `status`      | `string` | **Required* Current status |
+
+```http
+  GET /api/publications/{pub_id}
+```
+
+```http
+  DELETE /api/publications/{pub_id}
+```
