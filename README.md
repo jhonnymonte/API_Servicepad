@@ -1,10 +1,12 @@
+## API challenge made by Jonatan montenegro
+
 Create the python environment and install the necessary dependencies
 
     $ pipenv shell 
     $ pipenv install
 > this install all dependencies in a python container
 
-##test the API
+## Setting and run the API
 ------
 Please install postgresql on your computer 
 ------
