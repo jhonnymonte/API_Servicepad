@@ -45,7 +45,7 @@ then you have to init a python terminal to make the migrations and insert the ne
 
 ## User managment
 
-```https
+```http
   POST /api/auth/register
 ```
 
@@ -56,7 +56,7 @@ then you have to init a python terminal to make the migrations and insert the ne
 | `password` | `string` | **Required*. Password |
 
 
-```https
+```http
   POST /api/auth/login
   ```
 
@@ -66,7 +66,7 @@ then you have to init a python terminal to make the migrations and insert the ne
 | `password` | `string` | **Required*. Password |
 
 
-```https
+```http
   PUT /api/auth
 ```
 | Parameter | Type     | Description                |

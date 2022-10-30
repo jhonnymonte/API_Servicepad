@@ -1,17 +1,24 @@
-
-import fizbuzz
-
-
-def test_multiples_of_three():
-    n = 3
-    assert "fizz" == fizbuzz(n)
+import unittest
+from fizzbuzz import fizzbuzz_count
 
 
-def test_multiples_of_five():
-    n = 5
-    assert "buzz" == fizbuzz(n)
+class TestFizzBuzz(unittest.TestCase):
+    def test_fizz(self):
+        for i in [3, 6, 9, 18]:
+            print('testing', i)
+            assert fizzbuzz_count(i) == 'Fizz'
 
+    def test_buzz(self):
+        for i in [5, 10, 50]:
+            print('testing', i)
+            assert fizzbuzz_count(i) == 'Buzz'
 
-def test_multiples_of_three_and_five():
-    n = 15
-    assert "fizz buzz" == fizbuzz(n)
+    def test_fizzbuzz(self):
+        for i in [15, 30, 75]:
+            print('testing', i)
+            assert fizzbuzz_count(i) == 'FizzBuzz'
+    
+    def test_number(self):
+        for i in [2, 4, 88]:
+            print('testing', i)
+            assert fizzbuzz_count(i) == i
