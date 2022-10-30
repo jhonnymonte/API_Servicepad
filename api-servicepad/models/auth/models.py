@@ -1,6 +1,9 @@
 from config.settings import db
 
-class Users(db.Model):  
+class Users(db.Model):
+    """
+    Creation of the models for the users table
+    """
     id = db.Column(db.Integer, primary_key=True)
     public_id = db.Column(db.String(50), unique=True)  
     fullname = db.Column(db.String(50))

@@ -26,6 +26,7 @@ pylint = "*"
 safety = "*"
 black = "*"
 psycopg2 = "*"
+loguru = "*"
 
 [dev-packages]
 autopep8 = "*"
