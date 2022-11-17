@@ -1,10 +1,12 @@
 from flask import Flask, current_app
 from flask_sqlalchemy import SQLAlchemy
 from flasgger import Swagger
+from flask_marshmallow import Marshmallow
 from config.swagger import swagger_config, template
 
 
-app = Flask(__name__) 
+app = Flask(__name__)
+ma = Marshmallow(app)
 
 UPLOAD_FOLDER = 'static/users/'
 SECRET_KEY = 'JUaZYfFml7'

@@ -11,6 +11,8 @@ from utils.image_file import allowed_file
 from utils.token import token_required
 from werkzeug.utils import secure_filename
 from werkzeug.security import generate_password_hash, check_password_hash
+#
+from schemas.users_schema import UserSchema
 
 
 
@@ -98,6 +100,7 @@ def get_all_users():
     Obtaining all users
     """
     users = Users.query.all()
+    users_schema = UserSchema(many=True)
     result = []
 
     for user in users:
@@ -109,5 +112,5 @@ def get_all_users():
         user_info['images'] = user.images
 
         result.append(user_info)
-
-    return jsonify({'users': result})
+    return users_schema.dump(result)
+    #return jsonify({'users': result})

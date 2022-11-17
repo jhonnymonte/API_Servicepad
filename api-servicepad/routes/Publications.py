@@ -5,6 +5,9 @@ from flasgger import swag_from
 from flask import request, jsonify
 from models.publications.models import Publication
 from utils.token import token_required
+#
+from schemas.publication_schema import PublicationSchema
+
 
 
 @app.route('/api/publications', methods=['GET'])
@@ -15,6 +18,7 @@ def get_publications(current_user):
     API method that fetches all posts from registered users
     """
     publications = Publication.query.filter_by(user_id=current_user.id).all()
+    publication_schema = PublicationSchema()
     response = []
     for publication in publications:
         publication_info = {}
@@ -27,7 +31,9 @@ def get_publications(current_user):
         publication_info['updated_at'] = publication.updated_at
         response.append(publication_info)
 
-    return jsonify({'list_of_publications': response})
+    #return jsonify({'list_of_publications': response})
+    return publication_schema.dump(response)
+
 
 
 @app.route('/api/publications/<pub_id>', methods=['GET'])
